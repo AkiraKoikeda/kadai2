@@ -1,5 +1,5 @@
 <body>
-<p id= "notice">
+<p class= "message">
     <%= flash[:notice] %>
 </p>
 
@@ -30,7 +30,6 @@
 </tbody>
 </table>
 
-
 <h2>New Book</h2>
 <% if @book.errors.any? %>
   <%= @book.errors.count %>errors prohibited this book from being saved:
@@ -43,19 +42,18 @@
 
 <%= form_with model: @book do |f| %>
 
-<div class="field">
- <label for="book_title">Title</label>
+ <div class="index-title">Title</div>
  <%= f.text_field :title %>
-</div>
 
-<div class="field">
- <label for="book_body">Body</label>
+
+ <div class="index-body">Body</div>
  <%= f.text_area :body %>
-</div>
 
-<div class="actions">
- <%= f.submit 'Create Book' %>
-</div>
+
+ <div class="index-submit">
+  <%= f.submit 'Create Book' %>
+ </div>
+
 
 <% end %>
 </body>
